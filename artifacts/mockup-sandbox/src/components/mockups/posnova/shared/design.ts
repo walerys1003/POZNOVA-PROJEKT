@@ -294,6 +294,52 @@ export const globalStyles = `
   }
 
   /* ── Responsive grid helpers ── */
+
+  /* Semantic responsive grids used throughout pages */
+  .resp-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .resp-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .resp-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 960px) {
+    .resp-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+    .resp-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+
+  @media (max-width: 640px) {
+    .resp-grid-2 { grid-template-columns: 1fr !important; }
+    .resp-grid-3 { grid-template-columns: 1fr !important; }
+    .resp-grid-4 { grid-template-columns: 1fr !important; }
+  }
+
+  /* Scroll background morph transition */
+  .posnova-root main {
+    transition: background-color 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  @keyframes hairlineDraw {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .hairline-draw {
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hairline-draw.visible {
+    transform: scaleX(1);
+  }
+
   .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;

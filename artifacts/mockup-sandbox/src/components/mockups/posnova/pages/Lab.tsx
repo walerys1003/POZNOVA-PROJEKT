@@ -9,7 +9,7 @@ const researchAreas = [
     id: 'ai',
     code: 'R-01',
     name: 'Applied AI & LLM Systems',
-    tag: 'Core Research',
+    tag: 'Badania Podstawowe',
     desc: 'Badania nad niezawodnością i bezpieczeństwem systemów LLM w środowiskach produkcyjnych. Fokus: redukcja halucynacji, mechanizmy self-correction i weryfikacja faktów w domenach prawnych i medycznych.',
     papers: 3,
     projects: ['RAG Reliability Framework', 'LegalLLM Benchmark PL', 'HealthRAG Safety Layer'],
@@ -20,7 +20,7 @@ const researchAreas = [
     id: 'legaltech',
     code: 'R-02',
     name: 'Computational Law & LegalTech',
-    tag: 'Core Research',
+    tag: 'Badania Podstawowe',
     desc: 'Formalizacja polskiego prawa jako struktury danych. Budujemy ontologię polskiego systemu prawnego i narzędzia do automatycznej analizy zmian legislacyjnych.',
     papers: 5,
     projects: ['Lexicon Juris PL v2', 'ContractGraph', 'Monitor Ustaw AI'],
@@ -31,7 +31,7 @@ const researchAreas = [
     id: 'agetech',
     code: 'R-03',
     name: 'AgeTech & Senior AI Systems',
-    tag: 'Applied Research',
+    tag: 'Badania Stosowane',
     desc: 'Projektowanie systemów AI dla osób starszych — z priorytetem zaufania, prostoty i bezpieczeństwa. Badania nad konwersacyjnymi agentami AI i ich wpływem na dobrostan seniorów.',
     papers: 2,
     projects: ['ADAM Voice UX Study', 'Senior AI Interaction Patterns', 'Loneliness Reduction via AI'],
@@ -42,7 +42,7 @@ const researchAreas = [
     id: 'healthtech',
     code: 'R-04',
     name: 'HealthTech & Adherence AI',
-    tag: 'Applied Research',
+    tag: 'Badania Stosowane',
     desc: 'Badania nad AI-wspomaganą adherencją terapeutyczną i monitoringiem przewlekłych chorób. Współpraca z klinikami i POZ w Polsce.',
     papers: 2,
     projects: ['O!Lek Clinical Study', 'Adherence ML Model v2', 'PHR Integration Research'],
@@ -53,7 +53,7 @@ const researchAreas = [
     id: 'proptech',
     code: 'R-05',
     name: 'PropTech & Market Intelligence',
-    tag: 'Data Research',
+    tag: 'Badania Danych',
     desc: 'Modelowanie rynku nieruchomości metodami ML — predykcja cen najmu, wykrywanie anomalii i segmentacja rynku na poziomie dzielnicy.',
     papers: 2,
     projects: ['RentIndex PL v3', 'Anomaly Detection Housing', 'Spatial Price Modeling'],
@@ -64,7 +64,7 @@ const researchAreas = [
     id: 'hrtech',
     code: 'R-06',
     name: 'HR-Tech & Culture Fit AI',
-    tag: 'Social Research',
+    tag: 'Badania Społeczne',
     desc: 'Badania nad etyczną rekrutacją wspomaganą AI — blind recruitment, ocena dopasowania kulturowego i mitygacja bias algorytmicznego.',
     papers: 1,
     projects: ['Bias Audit UnityHire', 'Culture Fit Scoring v2', 'Blind Recruitment Study PL'],
@@ -75,7 +75,7 @@ const researchAreas = [
     id: 'impact',
     code: 'R-07',
     name: 'Social Impact Measurement',
-    tag: 'Methodology',
+    tag: 'Metodologia',
     desc: 'Pierwsza polska metodologia SROI dedykowana branży IT i przedsiębiorstwom społecznym technologicznym. Benchmarking PS w sektorze tech.',
     papers: 3,
     projects: ['SROI-TechPL Framework', 'Impact Metrics Dashboard', 'PS Benchmarking 2026'],
@@ -219,7 +219,7 @@ export function Lab({ navigate }: PageProps) {
                 {active.tag}
               </div>
               <div style={{ fontFamily: fonts.mono, fontSize: '9px', letterSpacing: '0.12em', color: colors.steel, textTransform: 'uppercase', marginBottom: '24px' }}>
-                Lead: {active.lead} · Produkt: {active.product}
+                Kierownik: {active.lead} · Produkt: {active.product}
               </div>
               <p style={{ fontFamily: fonts.body, fontSize: '16px', color: colors.silver, lineHeight: 1.8, margin: '0 0 40px' }}>
                 {active.desc}
@@ -243,7 +243,7 @@ export function Lab({ navigate }: PageProps) {
                 <div key={proj} style={{ borderTop: `1px solid ${colors.graphite}`, padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div style={{ fontFamily: fonts.body, fontSize: '15px', color: colors.silver }}>{proj}</div>
                   <div style={{ fontFamily: fonts.mono, fontSize: '9px', letterSpacing: '0.12em', color: colors.coldSteel, padding: '4px 10px', border: `1px solid ${colors.coldSteel}` }}>
-                    ACTIVE
+                    AKTYWNY
                   </div>
                 </div>
               ))}
@@ -286,7 +286,7 @@ export function Lab({ navigate }: PageProps) {
               Publikacje naukowe
             </div>
             <h2 style={{ fontFamily: fonts.display, fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 300, color: colors.obsidian, letterSpacing: '-0.02em', margin: '0 0 64px', lineHeight: 1.05 }}>
-              Selected Papers 2026
+              Wybrane Publikacje 2026
             </h2>
           </RevealDiv>
 
@@ -334,7 +334,7 @@ export function Lab({ navigate }: PageProps) {
             ].map(pos => (
               <div key={pos} style={{ background: colors.graphiteDeep, padding: '28px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ fontFamily: fonts.body, fontSize: '14px', color: colors.silver }}>{pos}</div>
-                <div style={{ fontFamily: fonts.mono, fontSize: '9px', color: colors.coldSteel, padding: '3px 8px', border: `1px solid ${colors.coldSteel}` }}>OPEN</div>
+                <div style={{ fontFamily: fonts.mono, fontSize: '9px', color: colors.coldSteel, padding: '3px 8px', border: `1px solid ${colors.coldSteel}` }}>OTWARTE</div>
               </div>
             ))}
           </div>
