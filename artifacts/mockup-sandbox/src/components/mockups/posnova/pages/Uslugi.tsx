@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { PageProps } from '../types'
 import { colors } from '../shared/design'
 
@@ -78,8 +79,28 @@ const services = [
 ]
 
 export function Uslugi({ navigate }: PageProps) {
-  const [selected, setSelected] = useState<number | null>(null)
+  const { service } = useParams<{ service?: string }>()
+  const [selected, setSelected] = useState<number | null>(() => {
+    if (service) {
+      const idx = services.findIndex(s => s.id === service)
+      return idx >= 0 ? idx : null
+    }
+    return null
+  })
   const [hovered, setHovered] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (service) {
+      const idx = services.findIndex(s => s.id === service)
+      if (idx >= 0) {
+        setSelected(idx)
+        setTimeout(() => {
+          const el = document.getElementById(`service-${services[idx].id}`)
+          el?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }, 300)
+      }
+    }
+  }, [service])
 
   const selectedService = selected !== null ? services[selected] : null
 
@@ -109,7 +130,7 @@ export function Uslugi({ navigate }: PageProps) {
           </div>
 
           {services.map((s, i) => (
-            <div key={s.id}>
+            <div key={s.id} id={`service-${s.id}`}>
               <div
                 style={{
                   display: 'grid',

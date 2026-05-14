@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { PageProps } from '../types'
 import { colors } from '../shared/design'
 
@@ -102,7 +103,11 @@ const statusColor = (s: string) => {
 }
 
 export function Produkty({ navigate }: PageProps) {
-  const [active, setActive] = useState<string | null>(null)
+  const { product } = useParams<{ product?: string }>()
+  const [active, setActive] = useState<string | null>(() => {
+    if (product && products.some(p => p.id === product)) return product
+    return null
+  })
   const activeProduct = products.find(p => p.id === active)
 
   if (activeProduct) {
